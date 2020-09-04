@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_marginTop="17dp"
+    android:layout_height="68dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="8dp"
+        android:id="@+id/card_view2"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="200dp"
+                android:padding="2dp"
+                android:layout_marginStart="10dp"
+                android:id="@+id/iv_image2"
+                android:src="@drawable/skill"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/tv_text2"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@id/iv_image2"
+                android:layout_toEndOf="@id/iv_image2"
+                android:gravity="center"
+                android:layout_marginStart="8dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_blah2"
+                android:textSize="15sp"
+                android:layout_marginStart="8dp"
+                android:text="300 Skill IQ score, Egypt"
+                android:layout_below="@id/tv_text2"
+                android:layout_toRightOf="@id/iv_image2"
+                android:layout_marginLeft="8dp">
+
+            </TextView>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
