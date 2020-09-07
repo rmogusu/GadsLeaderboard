@@ -8,4 +8,15 @@
     <color name="colorPrimaryText">#212121</color>
     <color name="colorSecondaryText">#727272</color>
     <color name="colorDivider">#B6B6B6</color>
+    <color name="colorAccent2">#AF864A</color>
+    <color name="background">#171616</color>
+    <color name="textColorPrimary">#fdfdfd</color>
+    <color name="textColor">#fdfdfd</color>
+    <color name="grey">#e2e2e2</color>
+    <color name="grey_black">#878787</color>
+    <color name="grey_black_2">#1e1e1e</color>
+    <color name="white">#fefefe</color>
+    <color name="white_2">#ededed</color>
+    <color name="green">#229922</color>
+    <color name="red">#ee2222</color>
 </resources>

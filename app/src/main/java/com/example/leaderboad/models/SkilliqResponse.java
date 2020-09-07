@@ -1,17 +1,15 @@
-
 package com.example.leaderboad.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class LearnersResponse {
-
+public class SkilliqResponse {
     @SerializedName("name")
     @Expose
     private String name;
-    @SerializedName("hours")
+    @SerializedName("score")
     @Expose
-    private int hours;
+    private int score;
     @SerializedName("country")
     @Expose
     private String country;
@@ -21,22 +19,22 @@ public class LearnersResponse {
 
     /**
      * No args constructor for use in serialization
-     * 
+     *
      */
-    public LearnersResponse() {
+    public SkilliqResponse() {
     }
 
     /**
-     * 
+     *
      * @param country
-     * @param hours
+     * @param score
      * @param badgeUrl
      * @param name
      */
-    public LearnersResponse(String name, int hours, String country, String badgeUrl) {
+    public SkilliqResponse(String name, int score, String country, String badgeUrl) {
         super();
         this.name = name;
-        this.hours = hours;
+        this.score = score;
         this.country = country;
         this.badgeUrl = badgeUrl;
     }
@@ -49,12 +47,12 @@ public class LearnersResponse {
         this.name = name;
     }
 
-    public int getHours() {
-        return hours;
+    public int getScore() {
+        return score;
     }
 
-    public void setHours(int hours) {
-        this.hours = hours;
+    public void setScore(int score) {
+        this.score = score;
     }
 
     public String getCountry() {
@@ -72,5 +70,4 @@ public class LearnersResponse {
     public void setBadgeUrl(String badgeUrl) {
         this.badgeUrl = badgeUrl;
     }
-
 }
