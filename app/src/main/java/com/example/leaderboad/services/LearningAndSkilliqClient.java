@@ -3,7 +3,7 @@ package com.example.leaderboad.services;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RetrofitGet {
+public class LearningAndSkilliqClient {
     private static Retrofit retrofit;
     private static final String BASE_URL = "https://gadsapi.herokuapp.com/";
 

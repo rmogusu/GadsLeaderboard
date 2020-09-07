@@ -17,12 +17,12 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class RecyclerViewAdapterLearners extends RecyclerView.Adapter<RecyclerViewAdapterLearners.CustomViewHolder>{
-    private List<LearnersResponse> dataList;
+    private List<LearnersResponse> mLarnersList;
     private Context context;
 
-    public RecyclerViewAdapterLearners(Context context, List<LearnersResponse> dataList){
+    public RecyclerViewAdapterLearners(Context context, List<LearnersResponse> mLarnersList){
         this.context = context;
-        this.dataList = dataList;
+        this.mLarnersList = mLarnersList;
     }
 
     class CustomViewHolder extends RecyclerView.ViewHolder {
@@ -53,12 +53,12 @@ public class RecyclerViewAdapterLearners extends RecyclerView.Adapter<RecyclerVi
 
     @Override
     public void onBindViewHolder(CustomViewHolder holder, int position) {
-        holder.name.setText(dataList.get(position).getName());
-        String hours_country=dataList.get(position).getHours()+" learning hours, "+dataList.get(position).getCountry()+".";
+        holder.name.setText(mLarnersList.get(position).getName());
+        String hours_country=mLarnersList.get(position).getHours()+" learning hours, "+mLarnersList.get(position).getCountry()+".";
         holder.hours_country.setText(hours_country);
         Picasso.Builder builder = new Picasso.Builder(context);
         builder.downloader(new OkHttp3Downloader(context));
-        builder.build().load(dataList.get(position).getBadgeUrl())
+        builder.build().load(mLarnersList.get(position).getBadgeUrl())
                 .placeholder((R.drawable.toplearner))
                 .error(R.drawable.toplearner)
                 .into(holder.badge);
@@ -66,6 +66,6 @@ public class RecyclerViewAdapterLearners extends RecyclerView.Adapter<RecyclerVi
 
     @Override
     public int getItemCount() {
-        return dataList.size();
+        return mLarnersList.size();
     }
 }

@@ -13,10 +13,10 @@ import androidx.annotation.NonNull;
 
 import com.example.leaderboad.R;
 import com.example.leaderboad.models.LearnersResponse;
-import com.example.leaderboad.models.ModelObject;
+import com.example.leaderboad.models.CustomPagerObject;
 import com.example.leaderboad.models.SkilliqResponse;
 import com.example.leaderboad.networks.LearningAndSkilliqApi;
-import com.example.leaderboad.services.RetrofitGet;
+import com.example.leaderboad.services.LearningAndSkilliqClient;
 
 import java.util.List;
 
@@ -37,14 +37,14 @@ public class CustomPagerAdapter extends PagerAdapter{
     @NonNull
     @Override
     public Object instantiateItem(ViewGroup collection, int position) {
-        ModelObject modelObject=ModelObject.values()[position];
+        CustomPagerObject modelObject= CustomPagerObject.values()[position];
         inflater = LayoutInflater.from(collection.getRootView().getContext());
         layout = (ViewGroup) inflater.inflate(modelObject.getLayoutResId(), collection, false);
         collection.addView(layout);
         recyclerView_learners=collection.findViewById(R.id.recyclerview_learners);
         recyclerView_skill=collection.findViewById(R.id.recyclerview_skill);
         if(recyclerView_learners!=null){
-           LearningAndSkilliqApi getter = RetrofitGet.getRetrofit().create(LearningAndSkilliqApi.class);
+           LearningAndSkilliqApi getter = LearningAndSkilliqClient.getRetrofit().create(LearningAndSkilliqApi.class);
             Call<List<LearnersResponse>> call = getter.getLearners();
             call.enqueue(new Callback<List<LearnersResponse>>() {
                 @Override
@@ -57,7 +57,7 @@ public class CustomPagerAdapter extends PagerAdapter{
                 }
             });
             if(recyclerView_skill!=null){
-                LearningAndSkilliqApi getter_ = RetrofitGet.getRetrofit().create(LearningAndSkilliqApi.class);
+                LearningAndSkilliqApi getter_ = LearningAndSkilliqClient.getRetrofit().create(LearningAndSkilliqApi.class);
                 Call<List<SkilliqResponse>> call_ = getter_.getSkillIqs();
                 call_.enqueue(new Callback<List<SkilliqResponse>>() {
                     @Override
@@ -81,7 +81,7 @@ public class CustomPagerAdapter extends PagerAdapter{
 
     @Override
     public int getCount() {
-        return ModelObject.values().length;
+        return CustomPagerObject.values().length;
     }
 
     @Override
@@ -91,7 +91,7 @@ public class CustomPagerAdapter extends PagerAdapter{
 
     @Override
     public CharSequence getPageTitle(int position) {
-        ModelObject customPagerEnum = ModelObject.values()[position];
+        CustomPagerObject customPagerEnum = CustomPagerObject.values()[position];
         return mContext.getString(customPagerEnum.getTitleResId());
     }
 

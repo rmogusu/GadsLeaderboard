@@ -17,12 +17,12 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class RecyclerViewAdapterSkill extends RecyclerView.Adapter<RecyclerViewAdapterSkill.CustomViewHolder>{
-    private List<SkilliqResponse> dataList;
+    private List<SkilliqResponse> mSkilliqList;
     private Context context;
 
-    public RecyclerViewAdapterSkill(Context context,List<SkilliqResponse> dataList){
+    public RecyclerViewAdapterSkill(Context context,List<SkilliqResponse> mSkilliqList){
         this.context = context;
-        this.dataList = dataList;
+        this.mSkilliqList = mSkilliqList;
     }
 
     class CustomViewHolder extends RecyclerView.ViewHolder {
@@ -53,12 +53,12 @@ public class RecyclerViewAdapterSkill extends RecyclerView.Adapter<RecyclerViewA
 
     @Override
     public void onBindViewHolder(CustomViewHolder holder, int position) {
-        holder.name.setText(dataList.get(position).getName());
-        String score_country=dataList.get(position).getScore()+" skill IQ score, "+dataList.get(position).getCountry()+".";
+        holder.name.setText(mSkilliqList.get(position).getName());
+        String score_country=mSkilliqList.get(position).getScore()+" skill IQ score, "+mSkilliqList.get(position).getCountry()+".";
         holder.score_country.setText(score_country);
         Picasso.Builder builder = new Picasso.Builder(context);
         builder.downloader(new OkHttp3Downloader(context));
-        builder.build().load(dataList.get(position).getBadgeUrl())
+        builder.build().load(mSkilliqList.get(position).getBadgeUrl())
                 .placeholder((R.drawable.skill))
                 .error(R.drawable.ic_launcher_background)
                 .into(holder.badge);
@@ -66,6 +66,6 @@ public class RecyclerViewAdapterSkill extends RecyclerView.Adapter<RecyclerViewA
 
     @Override
     public int getItemCount() {
-        return dataList.size();
+        return mSkilliqList.size();
     }
 }
