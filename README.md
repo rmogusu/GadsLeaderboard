@@ -8,6 +8,7 @@ A LeaderBoard app that allow user to view the first top  20  learning hours and 
 <img src="one.jpg" alt="one" width="300" height="500">        <img src="two.jpg" alt="two" width="300" height="500">
 <img src="three.jpg" alt="three" width="300" height="500">    <img src="four.jpg" alt="four" width="300" height="500">
 <img src="five.jpg" alt="five" width="300" height="500">      <img src="six.jpg" alt="six" width="300" height="500">
+<img src="seven.jpg" alt="six" width="300" height="500">
 
 ## Installations
 * SDK.
