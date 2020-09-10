@@ -5,10 +5,10 @@ Rose Mogusu.
 A LeaderBoard app that allow user to view the first top  20  learning hours and skill IQ  as well as submit there work through google forms and get successful message back else not successfully submitted.
 
 ## Screenshots
-<img src="one.jpg" alt="one" width="300" height="500"><img src="two.jpg" alt="two" width="300" height="500">
-<img src="three.jpg" alt="three" width="400" height="500">
-<img src="four.jpg" alt="four" width="400" height="500">
-<img src="five.jpg" alt="five" width="400" height="500">
+<img src="one.jpg" alt="one" width="300" height="500"> <img src="two.jpg" alt="two" width="300" height="500"> <img src="three.jpg" alt="three" width="300" height="500">
+
+<img src="four.jpg" alt="four" width="300" height="500">
+<img src="five.jpg" alt="five" width="300" height="500">
 
 ## Installations
 * SDK.
