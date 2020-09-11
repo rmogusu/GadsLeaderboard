@@ -144,8 +144,7 @@
                 android:textSize="18dp"
                 android:padding="10dp"
                 android:layout_below="@id/submit_githublink"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/deep_orange"
+                android:background="@drawable/button_gradient"
                 android:layout_marginTop="15dp"
                 android:textColor="@color/colorTextIcons" />
 

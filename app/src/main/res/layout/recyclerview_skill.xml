@@ -8,6 +8,6 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:background="@color/white_2"
-       android:id="@+id/recyclerview_skill"
-       />
+       android:id="@+id/recyclerview_skill" />
+
 </LinearLayout>

@@ -8,6 +8,9 @@ import androidx.viewpager.widget.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 
 
@@ -28,6 +31,8 @@ public class CustomPagerAdapter extends PagerAdapter{
     Context mContext;
     LayoutInflater inflater;
     ViewGroup layout;
+
+
     RecyclerView recyclerView_learners;
     RecyclerView recyclerView_skill;
     public CustomPagerAdapter(Context context) {
@@ -49,11 +54,15 @@ public class CustomPagerAdapter extends PagerAdapter{
             call.enqueue(new Callback<List<LearnersResponse>>() {
                 @Override
                 public void onResponse(Call<List<LearnersResponse>> call, Response<List<LearnersResponse>> response) {
-                    generateLearnersDataList(response.body());
+                    if (response.isSuccessful()) {
+                        generateLearnersDataList(response.body());
+
+                    }
                 }
 
                 @Override
                 public void onFailure(Call<List<LearnersResponse>> call, Throwable t) {
+
                 }
             });
             if(recyclerView_skill!=null){
@@ -63,11 +72,13 @@ public class CustomPagerAdapter extends PagerAdapter{
                     @Override
                     public void onResponse(Call<List<SkilliqResponse>> call_, Response<List<SkilliqResponse>> response) {
                         generateSKillsDataList(response.body());
-                    }
+                        }
 
                     @Override
                     public void onFailure(Call<List<SkilliqResponse>> call_, Throwable t) {
+
                     }
+
                 });
             }
         }
@@ -108,4 +119,6 @@ public class CustomPagerAdapter extends PagerAdapter{
         recyclerView_skill.setLayoutManager(layoutManager);
         recyclerView_skill.setAdapter(adapter);
     }
+
+
 }

@@ -19,5 +19,6 @@
     <color name="white_2">#ededed</color>
     <color name="red">#FF0000</color>
     <color name="orange">#FFB347</color>
-    <color name="deep_orange">#ff8c00</color>
+    <color name="light_orange">#FFFFCC80</color>
+    <color name="deep_orange">#FFF57C00</color>
 </resources>
