@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import android.widget.Button;
+import android.widget.ProgressBar;
 
 
 import com.example.leaderboad.R;
@@ -26,7 +27,7 @@ import com.google.android.material.tabs.TabLayout;
 
 public class LeaderboardListActivity extends AppCompatActivity implements View.OnClickListener {
     private Button mSubmit;
-
+    ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class LeaderboardListActivity extends AppCompatActivity implements View.O
         tabLayout.setupWithViewPager(viewPager);
         mSubmit = (Button) findViewById(R.id.button);
         mSubmit.setOnClickListener(this);
+
     }
 
         @Override
@@ -49,4 +51,6 @@ public class LeaderboardListActivity extends AppCompatActivity implements View.O
                 startActivity(intent);
             }
         }
+
+
 }
